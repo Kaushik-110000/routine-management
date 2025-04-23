@@ -6,7 +6,6 @@ import classservice from "../backend/class.config.js";
 export default function ScheduleClasses() {
   const { classID, day } = useParams();
   const isLoggedIn = useSelector((state) => state.auth.status);
-
   const [slots, setSlots] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -15,6 +14,7 @@ export default function ScheduleClasses() {
     endTime: "",
     userName: "",
   });
+  
 
   // Fetch schedule for this class/day
   const fetchSchedule = async () => {
